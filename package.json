@@ -1,7 +1,7 @@
 {
     "name": "angular-dirty-check",
     "description": "Dirty form checker for AngularJS",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "author": "Jonas Zuberbuehler <jonas.zuberbuehler@gmail.com>",
     "repository": {
         "type": "git",
@@ -26,6 +26,6 @@
         "gulp-jshint": "^2.0.1",
         "gulp-uglify": "^2.0.0",
         "jshint": "^2.9.3",
-        "jshint-stylish": "^2.2.1",
+        "jshint-stylish": "^2.2.1"
     }
 }
