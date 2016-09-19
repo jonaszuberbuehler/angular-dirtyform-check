@@ -19,7 +19,7 @@
         "dirty",
         "unsaved"
     ],
-    "main": "./dist/angular-dirty-check.min.js",
+    "main": "./dist/angular-dirty-check.js",
     "ignore": [
         "**/.*",
         "src",
