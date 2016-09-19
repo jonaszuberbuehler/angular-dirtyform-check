@@ -1,0 +1,31 @@
+{
+    "name": "angular-dirty-check",
+    "description": "Dirty form checker for AngularJS",
+    "version": "0.1.0",
+    "author": "Jonas Zuberbuehler <jonas.zuberbuehler@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jonaszuberbuehler/angular-dirty-check.git"
+    },
+    "homepage": "https://github.com/jonaszuberbuehler/angular-dirty-check",
+    "license": "MIT",
+    "private": false,
+    "keywords": [
+        "angular",
+        "angularjs",
+        "form",
+        "dirty",
+        "unsaved"
+    ],
+    "main": "index.js",
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.0",
+        "gulp-connect": "^5.0.0",
+        "gulp-if": "^2.0.1",
+        "gulp-jshint": "^2.0.1",
+        "gulp-uglify": "^2.0.0",
+        "jshint": "^2.9.3",
+        "jshint-stylish": "^2.2.1",
+    }
+}
