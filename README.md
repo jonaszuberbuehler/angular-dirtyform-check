@@ -9,7 +9,7 @@
 
 [Here][3]
 
-[3]: https://jonaszuberbuehler.github.io/angular-dirty-check
+[3]: https://jonaszuberbuehler.github.io/angular-dirty-check/demo
 
 ## Get it
 
