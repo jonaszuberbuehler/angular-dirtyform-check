@@ -94,7 +94,7 @@ function dirtyCheckDialog(ngDialog) {
 ```
 [4]: https://github.com/likeastore/ngDialog
 
-or [$mdDialog][5] from Angular Material (`$mdDialog.show()`returns a promise)
+or [$mdDialog][5] from Angular Material (`$mdDialog.show()` returns a promise)
 
 ```js
 var module = angular.module('yourApp', [
