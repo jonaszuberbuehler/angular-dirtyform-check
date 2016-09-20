@@ -1,7 +1,7 @@
 {
     "name": "angular-dirty-check",
     "description": "Dirty form checker for AngularJS",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "author": "Jonas Zuberbuehler <jonas.zuberbuehler@gmail.com>",
     "repository": {
         "type": "git",

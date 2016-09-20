@@ -31,7 +31,8 @@
                     }
                 };
             }
-            if (moduleLoaded('ui.route')) {
+            if (moduleLoaded('ui.router')) {
+                getService.$inject = ['$rootScope', '$state'];
                 router = {
                     subscribeStateChange: function (evtHandler) {
                         function dispatch(event, toState, toParams) {
