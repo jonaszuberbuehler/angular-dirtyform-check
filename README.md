@@ -1,4 +1,4 @@
-# angular-dirty-check
+# angular-dirtyform-check
 
 > Prompt user on navigation if there are unsaved form changes. Works with [ngRoute][1] and [ui-router][2].
 
@@ -9,35 +9,35 @@
 
 [Here][3]
 
-[3]: https://jonaszuberbuehler.github.io/angular-dirty-check/demo/#/form2
+[3]: https://jonaszuberbuehler.github.io/angular-dirtyform-check/demo/#/form2
 
 ## Get it
 
 from npm
 
 ```bash
-npm install --save angular-dirty-check
+npm install --save angular-dirtyform-check
 ```
 
 from bower
 
 ```bash
-bower install --save angular-dirty-check
+bower install --save angular-dirtyform-check
 ```
 
 and add it to your html file
 
 ```html
-<script src="/dist/angular-dirty-check.min.js"></script>
+<script src="/dist/angular-dirtyform-check.js"></script>
 ```
 
 ## Use it
 
-Add `angular-dirty-check` as dependency
+Add `angular-dirtyform-check` as dependency
 
 ```js
 var module = angular.module('yourApp', [
-    'angularDirtyCheck'
+    'angularDirtyformCheck'
 ]);
 
 ```
@@ -75,7 +75,7 @@ Example using [ngDialog][4] (`openConfirm()` returns a promise)
 
 ```js
 var module = angular.module('yourApp', [
-    'angularDirtyCheck',
+    'angularDirtyformCheck',
     'ngDialog'
 ]);
 
@@ -98,7 +98,7 @@ or [$mdDialog][5] from Angular Material (`$mdDialog.show()` returns a promise)
 
 ```js
 var module = angular.module('yourApp', [
-    'angularDirtyCheck',
+    'angularDirtyformCheck',
     'ngMaterial'
 ]);
 

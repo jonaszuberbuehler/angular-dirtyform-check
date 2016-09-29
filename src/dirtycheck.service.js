@@ -2,7 +2,7 @@
     'use strict';
     
     angular
-        .module('angularDirtyCheck')
+        .module('angularDirtyformCheck')
         .provider('dirtyCheckService', dirtyCheckService);
     
     function dirtyCheckService() {

@@ -1,15 +1,15 @@
 {
-    "name": "angular-dirty-check",
-    "description": "Dirty form checker for AngularJS",
+    "name": "angular-dirty-form",
+    "description": "Dirty (i.e. unsaved changes) form checker for AngularJS",
     "version": "0.1.3",
     "authors": [
         "Jonas Zuberbuehler <jonas.zuberbuehler@gmail.com"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonaszuberbuehler/angular-dirty-check.git"
+        "url": "https://github.com/jonaszuberbuehler/angular-dirtyform-check.git"
     },
-    "homepage": "https://github.com/jonaszuberbuehler/angular-dirty-check",
+    "homepage": "https://github.com/jonaszuberbuehler/angular-dirtyform-check",
     "license": "MIT",
     "private": false,
     "keywords": [
@@ -17,9 +17,10 @@
         "angularjs",
         "form",
         "dirty",
-        "unsaved"
+        "unsaved",
+        "changes"
     ],
-    "main": "./dist/angular-dirty-check.js",
+    "main": "./dist/angular-dirtyform-check.js",
     "ignore": [
         "**/.*",
         "src",

@@ -1,2 +1,2 @@
-require('./dist/angular-dirty-check.min');
-module.exports = 'angularDirtyCheck';
+require('./dist/angular-dirtyform-check');
+module.exports = 'angularDirtyformCheck';

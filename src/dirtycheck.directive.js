@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('angularDirtyCheck')
+        .module('angularDirtyformCheck')
         .directive('dirtyCheck', ['dirtyCheckService', function (dirtyCheckService) {
             return {
                 require: 'form',

@@ -26,7 +26,7 @@
     
     gulp.task('build', function () {
         return gulp.src('./src/*.js')
-            .pipe(concat('angular-dirty-check.js'))
+            .pipe(concat('angular-dirtyform-check.js'))
             .pipe(uglify())
             .pipe(gulp.dest('./dist'));
     })

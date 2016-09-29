@@ -1,8 +1,8 @@
 (function () {
     'use strict';
     
-    var module = angular.module('dirtyCheckDemo', [
-        'angularDirtyCheck',
+    var module = angular.module('dirtyformCheckDemo', [
+        'angularDirtyformCheck',
         'ngRoute',
         'ngDialog'
     ]);
