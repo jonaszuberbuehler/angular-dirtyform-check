@@ -23,6 +23,7 @@
     "main": "./dist/angular-dirtyform-check.js",
     "ignore": [
         "**/.*",
+        "*.iml",
         "src",
         "demo",
         "node_modules",
