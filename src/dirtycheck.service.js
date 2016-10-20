@@ -25,7 +25,8 @@
             
             return {
                 registerForm: registerForm,
-                deregisterForm: deregisterForm
+                deregisterForm: deregisterForm,
+                showPopup: showPopup
             };
             
             
@@ -67,17 +68,19 @@
             function showPopupOnNavigation(event) {
                 if (dirtyFormsShown()) {
                     event.preventDefault();
-                    var promise;
-                    if (dirtyDialog && angular.isFunction(dirtyDialog.show)) {
-                        promise = dirtyDialog.show();
-                    } else {
-                        promise = showDefaultConfirm();
-                    }
+                    var promise = showPopup();
                     promise.then(function () {
                         unsubscribeListeners();
                         dirtyCheckRouter.navAway();
                     });
                 }
+            }
+            
+            function showPopup() {
+                if (dirtyDialog && angular.isFunction(dirtyDialog.show)) {
+                    return dirtyDialog.show();
+                }
+                return showDefaultConfirm();
             }
             
             function showAlertOnWindowClose() {

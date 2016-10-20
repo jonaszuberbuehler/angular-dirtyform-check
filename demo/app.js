@@ -21,7 +21,7 @@
             })
             .when('/form2', {
                 templateUrl: 'form2.tpl.html',
-                controller: ['$scope', '$timeout', function ($scope, $timeout) {
+                controller: ['$scope', '$timeout', 'dirtyCheckService', '$location', function ($scope, $timeout, dirtyCheckService, $location) {
                     $scope.model = {};
                     $scope.submit = false;
                     $scope.fakeSubmit = function () {
@@ -34,6 +34,12 @@
                             $scope.form.$setPristine();
                         }, 2000);
                     };
+                    $scope.gotoForm1 = function () {
+                        dirtyCheckService.showPopup()
+                            .then(function () {
+                                $location.path('/form1');
+                            });
+                    }
                 }]
             })
             .otherwise('/form1');
