@@ -16,7 +16,7 @@
         
         function setRouting() {
             if (moduleLoaded('ngRoute')) {
-                getService.$inject = ['$rootScope', '$location'];
+                getService.$inject = ['$rootScope', '$location', '$injector', '$q', '$timeout'];
                 router = {
                     subscribeStateChange: function (evtHandler) {
                         function dispatch(event) {
@@ -32,7 +32,7 @@
                 };
             }
             if (moduleLoaded('ui.router')) {
-                getService.$inject = ['$rootScope', '$state'];
+                getService.$inject = ['$rootScope', '$state', '$injector', '$q', '$timeout'];
                 router = {
                     subscribeStateChange: function (evtHandler) {
                         function dispatch(event, toState, toParams) {
@@ -40,8 +40,37 @@
                             this.toParams = toParams;
                             evtHandler(event);
                         }
-                        
-                        return this.$rootScope.$on('$stateChangeStart', dispatch.bind(this));
+
+                        // for ui.router v1.0.0+
+                        function dispatch_V1(transition) {
+                            this.toState = transition.$to();
+                            this.toParams = transition.params();
+
+                            function stopMe(d, $timeout) {
+                                var t = $timeout(function () {
+                                    d.resolve();
+                                }, 0);
+
+                                function preventDefault() {
+                                    $timeout.cancel(t);
+                                    d.resolve(false);
+                                }
+                                const newEvent = {
+                                    preventDefault: preventDefault
+                                };
+                                return newEvent;
+                            }
+                            const d = this.$q.defer();
+                            evtHandler(stopMe(d, this.$timeout));
+                            return d.promise;
+                        }
+                        if (this.$transitions) {
+                            return this.$transitions.onBefore({
+                                to: '**'
+                            }, dispatch_V1.bind(this));
+                        } else {
+                            return this.$rootScope.$on('$stateChangeStart', dispatch.bind(this));
+                        }
                     },
                     navAway: function () {
                         this.routingService.go(this.toState, this.toParams);
@@ -52,7 +81,7 @@
                 throw 'Neither ngRoute nor ui.route module found';
             }
         }
-        
+
         function moduleLoaded(name) {
             var loaded = true;
             try {
@@ -62,10 +91,13 @@
             }
             return loaded;
         }
-        
-        function getService($rootScope, routingService) {
+
+        function getService($rootScope, routingService, $injector, $q, $timeout) {
             router.$rootScope = $rootScope;
             router.routingService = routingService;
+            router.$q = $q;
+            router.$timeout = $timeout;
+            router.$transitions = $injector.has('$transitions') ? $injector.get('$transitions') : undefined;
             return router;
         }
     }
