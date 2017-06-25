@@ -9,8 +9,10 @@
     
     module.config(config);
     
-    config.$inject = ['$routeProvider'];
-    function config($routeProvider) {
+    config.$inject = ['$routeProvider', '$locationProvider'];
+    function config($routeProvider, $locationProvider) {
+        $locationProvider.hashPrefix('');
+        
         $routeProvider
             .when('/form1/:someParam?', {
                 templateUrl: 'form1.tpl.html',
@@ -38,7 +40,7 @@
                         dirtyCheckService.showPopup()
                             .then(function () {
                                 $location.path('/form1');
-                            });
+                            }, angular.noop);
                     };
                 }]
             })
@@ -52,7 +54,8 @@
         return {
             show: function () {
                 return ngDialog.openConfirm({
-                    template: 'dialog.tpl.html'
+                    template: 'dialog.tpl.html',
+                    showClose: false
                 });
             }
         };

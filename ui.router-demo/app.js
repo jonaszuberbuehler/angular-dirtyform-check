@@ -9,8 +9,10 @@
     
     module.config(config);
     
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function config($stateProvider, $urlRouterProvider) {
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.hashPrefix('');
+        
         $stateProvider
             .state('form1', {
                 url: '/form1/:someParam?',
@@ -26,7 +28,7 @@
             .state('form2', {
                 url: '/form2',
                 templateUrl: 'form2.tpl.html',
-                controller: ['$scope', '$timeout', 'dirtyCheckService', '$location', function ($scope, $timeout, dirtyCheckService, $state) {
+                controller: ['$scope', '$timeout', 'dirtyCheckService', '$state', function ($scope, $timeout, dirtyCheckService, $state) {
                     $scope.model = {};
                     $scope.submit = false;
                     $scope.fakeSubmit = function () {
@@ -43,7 +45,7 @@
                         dirtyCheckService.showPopup()
                             .then(function () {
                                 $state.go('form1');
-                            });
+                            }, angular.noop);
                     };
                 }]
             });
@@ -58,7 +60,8 @@
         return {
             show: function () {
                 return ngDialog.openConfirm({
-                    template: 'dialog.tpl.html'
+                    template: 'dialog.tpl.html',
+                    showClose: false
                 });
             }
         };
