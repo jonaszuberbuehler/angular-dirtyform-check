@@ -9,16 +9,24 @@
     const uglify = require('gulp-uglify');
     const concat = require('gulp-concat');
     
-    gulp.task('demo', function () {
-        gulp.watch(['./src/**/*', './demo/**/*'], ['reload']);
+    gulp.task('ngRoute-demo', function () {
+        gulp.watch(['./src/**/*', './ngRoute-demo/**/*'], ['reload']);
         connect.server({
-            root: ['./demo', './'],
+            root: ['./ngRoute-demo', './'],
+            livereload: true
+        });
+    });
+    
+    gulp.task('ui.router-demo', function () {
+        gulp.watch(['./src/**/*', './ui.router-demo/**/*'], ['reload']);
+        connect.server({
+            root: ['./ui.router-demo', './'],
             livereload: true
         });
     });
     
     gulp.task('reload', function () {
-        gulp.src(['./src/**/*', './demo/**/*'])
+        gulp.src(['./src/**/*', './ui.router-demo/**/*', './ngRoute-demo/**/*'])
             .pipe(gulpif('*.js', jshint()))
             .pipe(gulpif('*.js', jshint.reporter(stylish)))
             .pipe(connect.reload());
