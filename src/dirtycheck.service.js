@@ -67,7 +67,7 @@
             
             function showPopupOnNavigation(deferred) {
                 if (dirtyFormsShown()) {
-                    deferred.resolve('Dirty form shown');
+                    deferred.reject('Dirty form shown');
                     var promise = showPopup();
                     promise.then(function () {
                         unsubscribeListeners();
