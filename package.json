@@ -1,7 +1,7 @@
 {
     "name": "angular-dirtyform-check",
     "description": "Dirty (i.e. unsaved changes) form checker for AngularJS",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "author": "Jonas Zuberbuehler <jonas.zuberbuehler@gmail.com>",
     "repository": {
         "type": "git",
