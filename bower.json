@@ -1,45 +1,46 @@
 {
-    "name": "angular-dirtyform-check",
-    "description": "Dirty (i.e. unsaved changes) form checker for AngularJS",
-    "version": "0.1.6",
-    "authors": [
-        "Jonas Zuberbuehler <jonas.zuberbuehler@gmail.com"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jonaszuberbuehler/angular-dirtyform-check.git"
-    },
-    "homepage": "https://github.com/jonaszuberbuehler/angular-dirtyform-check",
-    "license": "MIT",
-    "private": false,
-    "keywords": [
-        "angular",
-        "angularjs",
-        "form",
-        "dirty",
-        "unsaved",
-        "changes"
-    ],
-    "main": "./dist/angular-dirtyform-check.js",
-    "ignore": [
-        "**/.*",
-        "*.iml",
-        "src",
-        "demo",
-        "node_modules",
-        "bower_components",
-        "gulpfile.js",
-        "package.json",
-        "README.md",
-        "index.js"
-    ],
-    "dependencies": {
-        "angular": "~1.5.0"
-    },
-    "devDependencies": {
-        "angular": "^1.5.8",
-        "angular-route": "^1.5.8",
-        "ng-dialog": "^0.6.4",
-        "bootstrap": "^3.3.7"
-    }
+  "name": "angular-dirtyform-check",
+  "description": "Dirty (i.e. unsaved changes) form checker for AngularJS",
+  "version": "0.1.6",
+  "authors": [
+    "Jonas Zuberbuehler <jonas.zuberbuehler@gmail.com"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonaszuberbuehler/angular-dirtyform-check.git"
+  },
+  "homepage": "https://github.com/jonaszuberbuehler/angular-dirtyform-check",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "angular",
+    "angularjs",
+    "form",
+    "dirty",
+    "unsaved",
+    "changes"
+  ],
+  "main": "./dist/angular-dirtyform-check.js",
+  "ignore": [
+    "**/.*",
+    "*.iml",
+    "src",
+    "demo",
+    "node_modules",
+    "bower_components",
+    "gulpfile.js",
+    "package.json",
+    "README.md",
+    "index.js"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0"
+  },
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "ng-dialog": "^0.6.4",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^1.0.4"
+  }
 }

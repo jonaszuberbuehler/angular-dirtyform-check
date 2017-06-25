@@ -3,25 +3,30 @@
     
     var module = angular.module('dirtyformCheckDemo', [
         'angularDirtyformCheck',
-        'ngRoute',
+        'ui.router',
         'ngDialog'
     ]);
     
     module.config(config);
     
-    config.$inject = ['$routeProvider'];
-    function config($routeProvider) {
-        $routeProvider
-            .when('/form1/:someParam?', {
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('form1', {
+                url: '/form1/:someParam?',
+                params: {
+                    someParam: {squash: true, value: null}
+                },
                 templateUrl: 'form1.tpl.html',
-                controller: ['$scope', '$routeParams', function ($scope, $routeParams) {
+                controller: ['$scope', '$stateParams', function ($scope, $stateParams) {
                     $scope.model = {};
-                    $scope.params = $routeParams;
+                    $scope.params = $stateParams;
                 }]
             })
-            .when('/form2', {
+            .state('form2', {
+                url: '/form2',
                 templateUrl: 'form2.tpl.html',
-                controller: ['$scope', '$timeout', 'dirtyCheckService', '$location', function ($scope, $timeout, dirtyCheckService, $location) {
+                controller: ['$scope', '$timeout', 'dirtyCheckService', '$location', function ($scope, $timeout, dirtyCheckService, $state) {
                     $scope.model = {};
                     $scope.submit = false;
                     $scope.fakeSubmit = function () {
@@ -37,16 +42,17 @@
                     $scope.gotoForm1 = function () {
                         dirtyCheckService.showPopup()
                             .then(function () {
-                                $location.path('/form1');
+                                $state.go('form1');
                             });
-                    }
+                    };
                 }]
-            })
-            .otherwise('/form1');
+            });
+        
+        $urlRouterProvider.otherwise('form1');
     }
     
     module.service('dirtyCheckDialog', dirtyCheckDialog);
-
+    
     dirtyCheckDialog.$inject = ['ngDialog'];
     function dirtyCheckDialog(ngDialog) {
         return {

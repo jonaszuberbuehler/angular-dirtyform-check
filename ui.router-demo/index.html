@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dirtyformCheckDemo">
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Dirty Check Demo</title>
+
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="../bower_components/ng-dialog/css/ngDialog.css">
+        <link rel="stylesheet" href="../bower_components/ng-dialog/css/ngDialog-theme-default.css">
+        <style>
+            .spin {
+                -webkit-animation: spin 1000ms infinite linear;
+                animation: spin 1000ms infinite linear;
+            }
+
+            @-webkit-keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(359deg);
+                    transform: rotate(359deg);
+                }
+            }
+
+            @keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(359deg);
+                    transform: rotate(359deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <a href="https://github.com/jonaszuberbuehler/angular-dirtyform-check">
+            <img style="position: absolute; top: 0; right: 0; border: 0;"
+                 src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
+                 alt="Fork me on GitHub"
+                 data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+        <div class="container">
+            <h1>Dirty form demo</h1>
+            <ui-view></ui-view>
+        </div>
+
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="../bower_components/ng-dialog/js/ngDialog.min.js"></script>
+        <script src="../src/angular-dirtyform-check.js"></script>
+        <script src="../src/dirtycheck.service.js"></script>
+        <script src="../src/dirtycheckrouter.service.js"></script>
+        <script src="../src/dirtycheck.directive.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
