@@ -1,15 +1,16 @@
 # angular-dirtyform-check
 
-> Prompt user on navigation if there are unsaved form changes. Works with [ngRoute][1] and [ui-router][2].
+> Prompt user on navigation if there are unsaved form changes. Works with [ngRoute][1] and [ui.outer][2].
 
 [1]: https://docs.angularjs.org/api/ngRoute
 [2]: https://github.com/angular-ui/ui-router
 
 ## See it
 
-[Here][3]
+[Here][3] (using ngRoute) or [here][6] (using ui.router).
 
-[3]: https://jonaszuberbuehler.github.io/angular-dirtyform-check/demo/#/form2
+[3]: https://jonaszuberbuehler.github.io/angular-dirtyform-check/ngRoute-demo/#/form2
+[6]: https://jonaszuberbuehler.github.io/angular-dirtyform-check/ui.router-demo/#/form2
 
 ## Get it
 
@@ -61,7 +62,7 @@ By default a simple `confirm(dirtyMsg)` is shown to the user asking *Changes you
 You can change the message with `dirtyCheckServiceProvider.setDirtyMessage()` like
 
 ```js
- module.config(config);
+module.config(config);
 
 config.$inject = ['dirtyCheckServiceProvider'];
 function config(dirtyCheckServiceProvider) {
@@ -140,7 +141,7 @@ The built file is located under `./dist`.
 To run the demo locally run
 
 ```bash
-gulp demo
+gulp ngRoute-demo | gulp ui.router-demo
 ```
 
 and navigate your browser to `http://localhost:8080/dev_index.html`. Source changes will trigger a refresh.
