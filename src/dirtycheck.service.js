@@ -65,14 +65,16 @@
                 });
             }
             
-            function showPopupOnNavigation(event) {
+            function showPopupOnNavigation(deferred) {
                 if (dirtyFormsShown()) {
-                    event.preventDefault();
+                    deferred.resolve('Dirty form shown');
                     var promise = showPopup();
                     promise.then(function () {
                         unsubscribeListeners();
                         dirtyCheckRouter.navAway();
-                    });
+                    }, angular.noop);
+                } else {
+                    deferred.resolve();
                 }
             }
             
