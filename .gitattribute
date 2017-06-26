@@ -1,1 +1,3 @@
-*-demo/* linguist-vendored
+ngRoute-demo/* linguist-vendored
+ui.router-demo/* linguist-vendored
+bower_components/* linguist-vendored
